@@ -14,9 +14,10 @@ def creat_table(companie_statistics, title):
 
 
 def main():
-    hh = getting_statistics_from_hh()
+    programming_languages = ["Python", "Java","JavaScript","Ruby" ,"PHP","C++","CSS", "C#"]
+    hh = getting_statistics_from_hh(programming_languages)
     creat_table(hh, "HeadHunter Moscow")
-    sj = getting_statistics_from_sj()
+    sj = getting_statistics_from_sj(programming_languages)
     creat_table(sj, "SuperJob Moscow")
 
 

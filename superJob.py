@@ -12,8 +12,7 @@ def predict_rub_salary_for_superJob(profession):
         return profession["payment_to"]*0.8
 
 
-def getting_statistics_from_sj():
-    programming_languages = ["Python", "Java","JavaScript","Ruby" ,"PHP","C++","CSS", "C#"]
+def getting_statistics_from_sj(programming_languages):
     headers = { "X-Api-App-Id": "v3.h.4897191.9fafc4ef87e76003bd7bd7580f2e22b9db15309f.30e05339034c9cae603df3f7c36b1d1b69b1035b"}
 
     sj_statistics = {}

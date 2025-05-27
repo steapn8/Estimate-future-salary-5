@@ -11,8 +11,7 @@ def predict_rub_salary(salary):
             return salary["to"]*0.8
 
 
-def getting_statistics_from_hh():
-    programming_languages = ["Python", "Java","JavaScript","Ruby" ,"PHP","C++","CSS", "C#"]
+def getting_statistics_from_hh(programming_languages):
     hh_statistics = {}
     for programming_language in programming_languages:
         total_average_costs = []
