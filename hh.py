@@ -1,5 +1,5 @@
 import requests
-from terminaltables import AsciiTable
+
 
 def predict_rub_salary(salary):
         if salary["from"] and salary["to"]:
@@ -11,17 +11,12 @@ def predict_rub_salary(salary):
             return salary["to"]*0.8
 
 
-
-
 def getting_statistics_from_hh():
     programming_languages = ["Python", "Java","JavaScript","Ruby" ,"PHP","C++","CSS", "C#"]
     hh_statistics = {}
     for programming_language in programming_languages:
-        
         total_average_costs = []
-
         for page in range(13):
-
             payload = {
                 "text":programming_language,
                 "period":30,

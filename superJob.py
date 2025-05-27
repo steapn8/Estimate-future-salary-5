@@ -1,5 +1,4 @@
 import requests
-from terminaltables import AsciiTable
 
 
 def predict_rub_salary_for_superJob(profession):
