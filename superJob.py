@@ -1,11 +1,10 @@
 import requests
-import os
 from hh import predict_rub_salary
 from itertools import count
 
 
-def create_statistic_from_sj(programming_languages):
-    headers = { "X-Api-App-Id": os.getenv('ID')}
+def create_statistic_from_sj(programming_languages, sj_id):
+    headers = { "X-Api-App-Id": sj_id}
 
     sj_statistics = {}
     for programming_language in programming_languages:
