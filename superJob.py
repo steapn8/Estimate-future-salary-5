@@ -27,9 +27,8 @@ def create_statistic_from_sj(programming_languages, sj_id):
 
 
             for profession in professions:
-                if  profession["currency"] == "rub":
-                    if profession["payment_from"] or profession["payment_to"]:
-                        total_average_costs_superjob.append(predict_rub_salary(profession["payment_from"], profession["payment_to"]))
+                if  profession["currency"] == "rub" and profession["payment_from"] or profession["currency"] == "rub" and profession["payment_to"]:
+                    total_average_costs_superjob.append(predict_rub_salary(profession["payment_from"], profession["payment_to"]))
             if not response.json()["more"]:
                 break
         if len(total_average_costs_superjob):
