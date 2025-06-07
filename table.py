@@ -16,9 +16,9 @@ def creat_table(companie_statistics, title):
 
 def main():
     programming_languages = ["Python", "Java","JavaScript","Ruby" ,"PHP","C++","CSS", "C#"]
-    # hh = create_statistic_from_hh(programming_languages)
-    # hh_table = creat_table(hh, "HeadHunter Moscow")
-    # print(hh_table)
+    hh = create_statistic_from_hh(programming_languages)
+    hh_table = creat_table(hh, "HeadHunter Moscow")
+    print(hh_table)
     load_dotenv()
     sj_id =  os.getenv('ID_SJ')
     sj = create_statistic_from_sj(programming_languages, sj_id)

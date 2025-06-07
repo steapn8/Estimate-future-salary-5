@@ -19,8 +19,8 @@ def create_statistic_from_hh(programming_languages):
         for page in count(0):
             payload = {
                 "text":programming_language,
-                "period":30,
-                "area": 1,
+                "period":30, #Количество дней, в пределах которых производится поиск по вакансиям 
+                "area": 1, #Регион Москва
                 'page': page
             }
 
