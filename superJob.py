@@ -1,6 +1,14 @@
 import requests
-from hh import predict_rub_salary
 from itertools import count
+
+def predict_rub_salary(salary_from, salary_to):
+    if salary_from and salary_to:
+        average_salary = salary_from + salary_to
+        return average_salary/2
+    elif salary_from:
+        return salary_from*1.2
+    elif salary_to:
+        return salary_to*0.8
 
 
 def create_statistic_from_sj(programming_languages, sj_id):
@@ -23,10 +31,10 @@ def create_statistic_from_sj(programming_languages, sj_id):
 
             response = requests.get(url, params=payload, headers=headers)
             response.raise_for_status()
-            professions = response.json()["objects"]
+            vacancy = response.json()["objects"]
 
 
-            for profession in professions:
+            for profession in vacancy:
                 if  profession["currency"] == "rub" and profession["payment_from"] or profession["currency"] == "rub" and profession["payment_to"]:
                     total_average_costs_superjob.append(predict_rub_salary(profession["payment_from"], profession["payment_to"]))
             if not response.json()["more"]:
