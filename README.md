@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 ### Как запустить
 
-python table.py
+```python table.py```
 
 ### Цель проекта
 
