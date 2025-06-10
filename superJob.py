@@ -32,7 +32,7 @@ def create_statistic_from_sj(programming_languages, sj_id):
             response = requests.get(url, params=payload, headers=headers)
             response.raise_for_status()
             vacancy = response.json()["objects"]
-
+            response_total= response.json()["total"]
 
             for profession in vacancy:
                 if  profession["currency"] == "rub" and profession["payment_from"] or profession["currency"] == "rub" and profession["payment_to"]:
@@ -46,7 +46,7 @@ def create_statistic_from_sj(programming_languages, sj_id):
         
 
         sj_statistics[programming_language] = {
-            "vacancies_found": response.json()["total"],
+            "vacancies_found": response_total,
             "vacancies_processed": len(total_average_costs_superjob),
             "average_salary": average_salary
         }
